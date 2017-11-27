@@ -1,6 +1,6 @@
 {
   "name": "react-editable-label",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple React component for switching between a text label and a text input",
   "main": "dist/react-editable-label.dist.js",
   "scripts": {
@@ -12,6 +12,10 @@
   "author": {
     "name": "Mark Biek",
     "email": "info@biek.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markbiek/react-editable-label.git"
   },
   "devDependencies": {
     "immutable": "^3.8.1",

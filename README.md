@@ -9,6 +9,10 @@ An `ENTER` key press will switch from text input back to label and save any chan
 
 When a save is triggered, the `save` function passed in as a prop is called with the current value of the input.
 
+![Label view](https://i.imgur.com/zZokjZO.png)
+
+![Input view](https://i.imgur.com/vLPgHOg.png)
+
 ## Table of Contents
 
 * [Installation](#installation)
