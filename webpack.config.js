@@ -8,8 +8,8 @@ var config = {
     entry: APP_DIR + '/EditableLabel.js',
     output: {
         path: BUILD_DIR,
-        filename: 'editable-label.dist.js',
-        library: 'editable-label',
+        filename: 'react-editable-label.dist.js',
+        library: 'react-editable-label',
         libraryTarget: 'umd'
     },
     devtool: 'source-map',

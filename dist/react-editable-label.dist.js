@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["editable-label"] = factory();
+		exports["react-editable-label"] = factory();
 	else
-		root["editable-label"] = factory();
+		root["react-editable-label"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -30779,4 +30779,4 @@ module.exports = function() {
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=editable-label.dist.js.map
+//# sourceMappingURL=react-editable-label.dist.js.map

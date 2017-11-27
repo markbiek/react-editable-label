@@ -1,8 +1,8 @@
 {
-  "name": "editable-label",
+  "name": "react-editable-label",
   "version": "0.1.0",
   "description": "A simple React component for switching between a text label and a text input",
-  "main": "dist/editable-label.dist.js",
+  "main": "dist/react-editable-label.dist.js",
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack",
