@@ -41,7 +41,7 @@ Example:
 import React from 'react';
 import {render} from 'react-dom';
 
-import EditableLabel from 'editable-label';
+import EditableLabel from 'react-editable-label';
 
 class App extends React.Component {
     render () {
