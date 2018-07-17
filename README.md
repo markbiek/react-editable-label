@@ -24,7 +24,7 @@ When a save is triggered, the `save` function passed in as a prop is called with
 `$ yarn add react-editable-label`
 
 ## Usage
-The `EditableLabel object requires two props:
+The `EditableLabel` object requires two props:
 
 - `initialValue` which is the initial text to display
 - `save` which is the function called when the text is updated.
