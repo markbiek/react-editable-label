@@ -1,26 +1,34 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'dist');
-var APP_DIR = path.resolve(__dirname, 'lib');
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const APP_DIR = path.resolve(__dirname, 'lib');
 
 var config = {
-    entry: APP_DIR + '/EditableLabel.js',
+    devtool: 'source-map',
+    entry: [
+        'babel-polyfill',
+        APP_DIR + '/EditableLabel.js'
+    ],
     output: {
         path: BUILD_DIR,
         filename: 'react-editable-label.dist.js',
         library: 'react-editable-label',
         libraryTarget: 'umd'
     },
-    devtool: 'source-map',
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js[x]?$/,
                 include: APP_DIR,
-                loader: 'babel-loader'
+                use: ['babel-loader']
             }
         ]
+    },
+    externals: {
+        "react": "react",
+        "react-dom": "react-dom",
+        "immutable": "immutable"
     }
 };
 
