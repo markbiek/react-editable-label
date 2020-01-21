@@ -1,10 +1,12 @@
 const webpack = require('webpack');
 const path = require('path');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, 'lib');
 
 var config = {
+    mode: 'development',
     devtool: 'source-map',
     entry: [
         'babel-polyfill',
@@ -29,7 +31,13 @@ var config = {
         "react": "react",
         "react-dom": "react-dom",
         "immutable": "immutable"
-    }
+    },
+    plugins: [
+        new WebpackNotifierPlugin({
+            alwaysNotify: true,
+            skipFirstNotification: true,
+        }),
+    ]
 };
 
 module.exports = config;
