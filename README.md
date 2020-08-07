@@ -1,4 +1,5 @@
 # EditableLabel
+
 A simple React component for switching between a text label and a text input.
 
 Clicking on the text label switches the label to a text input. A loss of focus on the text input will switch back to the text label and save the text changes.
@@ -15,8 +16,8 @@ When a save is triggered, the `save` function passed in as a prop is called with
 
 ## Table of Contents
 
-* [Installation](#installation)
-* [Usage](#usage)
+- [Installation](#installation)
+- [Usage](#usage)
 
 ## Installation
 
@@ -24,6 +25,7 @@ When a save is triggered, the `save` function passed in as a prop is called with
 `$ yarn add react-editable-label`
 
 ## Usage
+
 The `EditableLabel` object requires two props:
 
 - `initialValue` which is the initial text to display
@@ -33,6 +35,8 @@ Optional props:
 
 - `labelClass` which is added to the `className` of the label `<span>` tag.
 - `inputClass` which is added to the `className` of the text `<input>` tag.
+- `inputName` which is used for the `name` attribute of the text `<input>` tag.
+- `inputId` which is used for the `id` attribute of the text `<input>` tag.
 - `disableKeys` which disables the keyPress handler.
 
 Example:
