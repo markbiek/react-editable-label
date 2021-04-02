@@ -16,8 +16,10 @@ When a save is triggered, the `save` function passed in as a prop is called with
 
 ## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
+- [EditableLabel](#editablelabel)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
 
 ## Installation
 
@@ -47,24 +49,18 @@ import {render} from 'react-dom';
 
 import EditableLabel from 'react-editable-label';
 
-class App extends React.Component {
-    render () {
-        return (
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-4 col-md-offset-2">
-                        <p>Hello!</p>
-                        <EditableLabel
-                            initialValue={'World'}
-                            save={value => {
-                                console.log(`Saving '${value}'`);
-                            }}
-                        />
-                    </div>
-                </div>
-            </div>
-        );
-    }
+const App = () => {
+    return (
+        <>
+            <p>Hello!</p>
+            <EditableLabel
+                initialValue={'World'}
+                save={value => {
+                    console.log(`Saving '${value}'`);
+                }}
+            />
+        </>
+    );
 }
 
 let app = document.getElementById('app');
