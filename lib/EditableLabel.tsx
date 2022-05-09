@@ -1,6 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import render from 'react-dom';
-import PropTypes from 'prop-types';
+
+interface EditableLabelProps {
+	initialValue: string;
+	save: SaveFunction;
+	labelClass?: string,
+	inputClass?: string,
+	inputName?: string,
+	inputId?: string,
+	disableKeys?: boolean,
+}
+
+type SaveFunction = (value: string) => void;
 
 const EditableLabel = ({
 	initialValue,
@@ -10,10 +20,10 @@ const EditableLabel = ({
 	labelClass,
 	inputName,
 	inputId,
-}) => {
-	const [view, setView] = useState('label');
-	const [value, setValue] = useState(initialValue);
-	const [previous, setPrevious] = useState(initialValue);
+}: EditableLabelProps) => {
+	const [view, setView] = useState<string>('label');
+	const [value, setValue] = useState<string>(initialValue);
+	const [previous, setPrevious] = useState<string>(initialValue);
 	const textInput = useRef<HTMLInputElement | null>(null);
 
 	useEffect(() => {
@@ -22,7 +32,7 @@ const EditableLabel = ({
 		}
 	}, [view, textInput]);
 
-	const keyUp = (e) => {
+	const keyUp = (e: React.KeyboardEvent<HTMLInputElement>) => {
 		if (disableKeys === true) {
 			return;
 		}
@@ -31,11 +41,13 @@ const EditableLabel = ({
 			setValue(previous);
 			setView('label');
 		} else if (e.key === 'Enter') {
-			setValue(e.target.value);
-			setPrevious(e.target.value);
+			const value = (e.target as HTMLInputElement).value;
+
+			setValue(value);
+			setPrevious(value);
 			setView('label');
 
-			save(e.target.value);
+			save(value);
 		}
 	};
 
@@ -43,7 +55,7 @@ const EditableLabel = ({
 		return (
 			<span
 				className={labelClass !== undefined ? labelClass : ''}
-				onClick={(e) => {
+				onClick={() => {
 					setView('text');
 				}}
 			>
@@ -62,10 +74,10 @@ const EditableLabel = ({
 					className={inputClass !== undefined ? inputClass : ''}
 					id={inputId !== undefined ? inputId : ''}
 					name={inputName !== undefined ? inputName : ''}
-					onChange={(e) => {
+					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
 						setValue(e.target.value);
 					}}
-					onBlur={(e) => {
+					onBlur={(e: React.FocusEvent<HTMLInputElement>) => {
 						setView('label');
 						setPrevious(e.target.value);
 
@@ -78,16 +90,6 @@ const EditableLabel = ({
 	};
 
 	return view === 'label' ? renderLabel() : renderInput();
-};
-
-EditableLabel.propTypes = {
-	initialValue: PropTypes.string.isRequired,
-	save: PropTypes.func.isRequired,
-	labelClass: PropTypes.string,
-	inputClass: PropTypes.string,
-	inputName: PropTypes.string,
-	inputId: PropTypes.string,
-	disableKeys: PropTypes.bool,
 };
 
 export default EditableLabel;
