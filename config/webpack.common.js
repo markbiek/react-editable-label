@@ -5,8 +5,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // Doing TypeScript type checking
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
-//const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-
 module.exports = {
 
 	// Where webpack looks to start building the bundle and include polyfill

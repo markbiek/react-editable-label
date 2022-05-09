@@ -9,3 +9,4 @@ Homestead.yaml
 .*.swo
 public/js
 public/css
+react-editable-label.dist.js.LICENSE.txt

@@ -14,11 +14,11 @@ const EditableLabel = ({
 	const [view, setView] = useState('label');
 	const [value, setValue] = useState(initialValue);
 	const [previous, setPrevious] = useState(initialValue);
-	const textInput = useRef(null);
+	const textInput = useRef<HTMLInputElement | null>(null);
 
 	useEffect(() => {
 		if (view === 'text') {
-			textInput.current.focus();
+			textInput?.current?.focus();
 		}
 	}, [view, textInput]);
 
