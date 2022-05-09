@@ -1,0 +1,31 @@
+{
+	"compilerOptions": {
+		"lib": [
+			"dom",
+			"dom.iterable",
+			"esnext"
+		],
+		"allowJs": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react",
+		"noImplicitAny": false
+	},
+	"include": [
+		"lib"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	],
+	"files": [
+		"EditableLabel.tsx"
+	]
+}
