@@ -3,11 +3,11 @@ import React, { useState, useEffect, useRef } from 'react';
 interface EditableLabelProps {
 	initialValue: string;
 	save: SaveFunction;
-	labelClass?: string,
-	inputClass?: string,
-	inputName?: string,
-	inputId?: string,
-	disableKeys?: boolean,
+	labelClass?: string;
+	inputClass?: string;
+	inputName?: string;
+	inputId?: string;
+	disableKeys?: boolean;
 }
 
 type SaveFunction = (value: string) => void;

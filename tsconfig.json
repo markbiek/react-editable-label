@@ -16,7 +16,9 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"jsx": "react",
-		"noImplicitAny": true
+		"noImplicitAny": true,
+		"declaration": true,
+		"outDir": "dist"
 	},
 	"include": [
 		"lib"
