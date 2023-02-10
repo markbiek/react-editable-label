@@ -1,21 +1,16 @@
-const paths = require('./paths')
-
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-
-// Doing TypeScript type checking
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const paths = require('./paths');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-
 	// Where webpack looks to start building the bundle and include polyfill
-	entry: ['whatwg-fetch', paths.src + '/EditableLabel.tsx'],
+	entry: [paths.src + '/EditableLabel.tsx'],
 
 	// Where webpack outputs the assets and bundles
 	output: {
 		path: paths.build,
 		filename: 'react-editable-label.dist.js',
 		library: 'react-editable-label',
-		libraryTarget: 'umd'
+		libraryTarget: 'umd',
 	},
 
 	resolve: {
@@ -26,10 +21,6 @@ module.exports = {
 	plugins: [
 		// Removes/cleans build folders and unused assets when rebuilding
 		new CleanWebpackPlugin(),
-
-		new ForkTsCheckerWebpackPlugin({
-			async: false,
-		}),
 	],
 
 	// Determine how modules within the project are treated
@@ -43,8 +34,8 @@ module.exports = {
 				test: /\.(jsx|js)$/,
 				exclude: /node_modules/,
 				use: {
-					loader: "babel-loader"
-				}
+					loader: 'babel-loader',
+				},
 			},
 
 			// Use Babel to transpile TypeScript and TypeScript / React files to ES5
@@ -52,9 +43,9 @@ module.exports = {
 				test: /\.(tsx|ts)$/,
 				exclude: /node_modules/,
 				use: {
-					loader: "babel-loader"
-				}
+					loader: 'babel-loader',
+				},
 			},
 		],
 	},
-}
+};
