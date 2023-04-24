@@ -24,8 +24,8 @@
 		"babel-polyfill": "^6.26.0",
 		"babel-preset-react": "^6.24.1",
 		"eslint": "^7.6.0",
-		"husky": "^4.2.5",
-		"lint-staged": "^10.2.11",
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.1",
 		"prettier": "^2.0.5",
 		"webpack-cli": "^3.0.8",
 		"webpack-notifier": "^1.8.0"
