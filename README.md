@@ -69,3 +69,11 @@ if (app) {
     render(<App/>, app);
 }
 ```
+
+## Typescript Support
+
+Types are currently provided through [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) via npm.
+
+```
+npm i --save-dev @types/react-editable-label
+```
