@@ -38,7 +38,7 @@
 	},
 	"dependencies": {
 		"prop-types": "^15.7.2",
-		"webpack": "^4.15.1"
+		"webpack": "^5.94.0"
 	},
 	"husky": {
 		"hooks": {
